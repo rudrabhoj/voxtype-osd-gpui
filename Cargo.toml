@@ -11,6 +11,11 @@ anyhow = { version = "1", optional = true }
 image = { version = "0.25", optional = true, default-features = false, features = ["png"] }
 gpui_wgpu = { git = "https://github.com/zed-industries/zed", rev = "1c9dd3e70f60e68b47f52845aee1da4be4ec13b8", optional = true }
 
+[target.'cfg(target_os = "macos")'.dependencies]
+gpui_platform = { git = "https://github.com/zed-industries/zed", rev = "1c9dd3e70f60e68b47f52845aee1da4be4ec13b8", default-features = false, features = ["font-kit"] }
+objc = "0.2"
+raw-window-handle = "0.6"
+
 [features]
 # Offscreen renderer for previews (pulls in GPUI's test platform).
 preview = ["gpui/test-support", "gpui_platform/test-support", "dep:gpui_wgpu", "dep:anyhow", "dep:image"]
