@@ -1,0 +1,5 @@
+# Append to ~/.config/skhd/skhdrc with __HOME__ replaced by your home directory.
+# Cmd+Alt+V starts recording, again stops and types the text at the cursor;
+# Cmd+Alt+C cancels. Shadows Finder's Cmd+Opt+V (move item) and Cmd+Opt+C (copy path).
+cmd + alt - v : __HOME__/.local/bin/voxtype record toggle
+cmd + alt - c : __HOME__/.local/bin/voxtype record cancel

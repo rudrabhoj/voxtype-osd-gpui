@@ -1,0 +1,36 @@
+# ~/.config/voxtype/config.toml
+#
+# Recording is driven by skhd (see skhdrc), so voxtype's own hotkey is off.
+
+state_file = "auto"
+
+[hotkey]
+key = "SCROLLLOCK"
+modifiers = []
+enabled = false
+
+[audio]
+device = "default"
+sample_rate = 16000
+max_duration_secs = 60
+
+[whisper]
+model = "small.en"
+language = "en"
+translate = false
+# Names and jargon you dictate often. Whisper biases toward these spellings.
+initial_prompt = "Terminal dictation: Claude Code, macOS, Homebrew, Ghostty, git, GitHub, Rust, cargo."
+
+[output]
+mode = "type"
+fallback_to_clipboard = true
+type_delay_ms = 0
+
+[output.notification]
+on_recording_start = false
+on_recording_stop = false
+on_transcription = true
+
+[osd]
+# Runs ~/.local/bin/voxtype-osd-native, which is this overlay.
+frontend = "native"
